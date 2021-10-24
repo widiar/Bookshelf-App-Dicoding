@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center app-title">Bookshelf App</h1>
+        <div class="content">
+            <div class="add-button">
+                <button>Add Book</button>
+            </div>
+            <div class="search-container">
+                <div class="input-search">
+                    <input id="search" type="text" name="search" placeholder="Search a book">
+                    <small class="text-info info-search"><i>*Tekan Enter untuk mencari</i></small>
+                </div>
+                <div class="reset-button">
+                    <button id="reset-btn">Reset Search</button>
+                </div>
+            </div>
+            <div class="unreaded-book">
+                <h1 class="m-0">Belum selesai dibaca</h1>
+                <hr>
+                <div class="list" id="unread">
+                </div>
+            </div>
+            <div class="readed-book">
+                <h1 class="title">Selesai dibaca</h1>
+                <hr>
+                <div class="list" id="read"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="inputModal">
+        <div class="modal-content w-80">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h2 class="text-center">Add Book</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-container">
+                    <form action="#" method="POST" id="form">
+                        <div class="form-input">
+                            <label for="title">Title</label>
+                            <input required type="text" name="title" id="title">
+                        </div>
+                        <div class="form-input">
+                            <label for="author">Author</label>
+                            <input required type="text" name="author" id="author">
+                        </div>
+                        <div class="form-input">
+                            <label for="year">Year</label>
+                            <input required type="number" name="year" id="year">
+                            <small class="text-info" id="error-year"></small>
+                        </div>
+                        <input type="hidden" id="bookId" value="">
+                        <button type="submit" id="submit">Tambahkan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="deleteModal">
+        <div class="modal-content w-50">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img class="img-modal" src="assets/checked.svg" alt="" width="50%">
+                <h1 class="m-0">Anda Yakin?</h1>
+                <h3 class="m-0">Anda akan menghapus buku <span id="deleteTitle">"Harry Potter"</span></h3>
+                <button class="btn-green">Yap</button>
+                <button class="btn-red">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="alertModal">
+        <div class="modal-content w-50">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img class="img-modal" src="assets/checked.svg" alt="" width="50%">
+                <h1 class="m-0">Success</h1>
+                <h3 class="m-0">Berhasil Menambah Data Buku</h3>
+                <button>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
